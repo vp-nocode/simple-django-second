@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'sapp/css/style.css' %}">
+    {% block title %}
+    <title>Parrot Django</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="d-flex">
+        <div class="sidebar bg-light d-flex flex-column align-items-center p-3" style="min-width: 200px;">
+            <h5>Perrot Django</h5>
+            <img src="{% static 'sapp/img/parrot.png' %}" alt="perrot" class="img-fluid img-thumbnail mb-3" width="100">
+
+            {% include 'sapp/nav.html'%}
+
+        </div>
+        <main class="content flex-grow-1">
+            <div class="container-fluid p-4">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+    </div>
+
+    {% include 'sapp/footer.html'%}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
