@@ -3,7 +3,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'sapp/home.html', {'caption':"Perrot Django"})
+    data = {
+        'caption': "Parrot Django"
+    }
+    return render(request, 'sapp/home.html', data)
      # return HttpResponse("<h1>Home page</h1>")
 
 def data(request):

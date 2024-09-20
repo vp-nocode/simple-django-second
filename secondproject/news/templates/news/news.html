@@ -1,0 +1,25 @@
+{% extends 'sapp/layoute.html' %}
+
+{% block title %}
+    <title>News page</title>
+{% endblock %}
+
+{% block content%}
+
+<section>
+    <h2>Новости учебного проекта на Django</h2>
+</section>
+<section>
+    {% for new in news %}
+	<div class="app">
+		<h3> {{ new.title }} </h3>
+        <h6> {{ new.author }}, {{ new.pub_date }} </h6>
+		<p> {{ new.short_description }}</p>
+        <div class="app">
+            <p> {{ new.text }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
